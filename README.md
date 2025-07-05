@@ -26,6 +26,18 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Windows Kullanıcıları (Kolay Yol)
+
+Windows kullanıcıları için `baslat.bat` dosyası hazırlanmıştır:
+
+1. `baslat.bat` dosyasına çift tıklayın
+2. Program otomatik olarak gerekli kurulumları yapacak
+3. Analiz etmek istediğiniz .exe dosyasının yolunu girin
+4. Gerekirse şifreyi girin
+5. Çıkarılan dosyalar masaüstünde `extracted_TARIH_SAAT` klasöründe olacak
+
+### Manuel Kullanım (Linux/macOS)
+
 ```bash
 # Activate virtual environment first
 source venv/bin/activate
@@ -38,6 +50,22 @@ python main.py /path/to/executable.exe
 
 # With verbose output
 python main.py /path/to/executable.exe --verbose
+```
+
+### Windows Manuel Kullanım
+
+```cmd
+# Activate virtual environment first
+venv\Scripts\activate.bat
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the dumper
+python main.py "C:\path\to\executable.exe"
+
+# With verbose output
+python main.py "C:\path\to\executable.exe" --verbose
 ```
 
 ## Project Structure
