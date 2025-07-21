@@ -1,112 +1,101 @@
-# Dumper
+# 🔍 PE Dumper Interactive
 
-A Python-based dumper tool for extracting and analyzing data.
+Kendi geliştirdiğiniz PE dosyalarının güvenlik testlerini yapmak için interaktif GUI aracı.
 
-## Setup
+## ⚡ Hızlı Başlangıç
 
-### Virtual Environment
-
+### 🐧 Linux / macOS
 ```bash
-# Create virtual environment
-python3 -m venv venv
-
-# Activate virtual environment
-source venv/bin/activate  # On Linux/macOS
-# or
-venv\Scripts\activate     # On Windows
-
-# Install dependencies
-pip install -r requirements.txt
+./run.sh                    # Tek komutla kurulum + çalıştırma
+./install.sh                # Manuel kurulum
+./launcher.sh               # Hızlı başlatma
+./scripts/start_dumper.sh   # Detaylı başlatma
 ```
 
-### Requirements
-
-- Python 3.7+
-- Dependencies listed in `requirements.txt`
-
-## Usage
-
-### Windows Kullanıcıları (Kolay Yol)
-
-Windows kullanıcıları için `baslat.bat` dosyası hazırlanmıştır:
-
-1. `baslat.bat` dosyasına çift tıklayın
-2. Program otomatik olarak gerekli kurulumları yapacak
-3. Analiz etmek istediğiniz .exe dosyasının yolunu girin
-4. Gerekirse şifreyi girin
-5. Çıkarılan dosyalar masaüstünde `extracted_TARIH_SAAT` klasöründe olacak
-
-### Manuel Kullanım (Linux/macOS)
-
-```bash
-# Activate virtual environment first
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the dumper
-python main.py /path/to/executable.exe
-
-# With verbose output
-python main.py /path/to/executable.exe --verbose
+### 🪟 Windows  
+```batch
+run.bat                     :: Tek tıkla kurulum + çalıştırma
+install.bat                 :: Manuel kurulum
+launcher.bat                :: Hızlı başlatma
+scripts\start_dumper.bat    :: Detaylı başlatma
 ```
 
-### Windows Manuel Kullanım
+### 🚀 Önerilen Kullanım
+- **Linux/macOS**: `./run.sh`
+- **Windows**: `run.bat` (çift tıklama)
 
-```cmd
-# Activate virtual environment first
-venv\Scripts\activate.bat
+## 📋 Özellikler
 
-# Install dependencies
-pip install -r requirements.txt
+### 🔓 Auth Bypass Sistemi
+- ✅ Otomatik yaygın key testi
+- ✅ Buffer overflow teknikleri  
+- ✅ Zayıflık bazlı bypass
+- ✅ Manuel key desteği
 
-# Run the dumper
-python main.py "C:\path\to\executable.exe"
+### 📦 Gelişmiş İçerik Çıkarma
+- ✅ C++ kaynak kodları
+- ✅ DLL dosyaları
+- ✅ Driver dosyaları
+- ✅ Sıkıştırılmış dosyalar
+- ✅ Şifreli veriler
+- ✅ Konfigürasyon dosyaları
 
-# With verbose output
-python main.py "C:\path\to\executable.exe" --verbose
-```
+### 🛡️ Güvenlik Analizi
+- ✅ Vulnerability skorlaması
+- ✅ Risk seviyesi analizi
+- ✅ Güvenlik önerileri
+- ✅ Detaylı raporlama
 
-## Project Structure
+## 🎯 Kullanım Akışı
 
-```
-Dumper/
-├── venv/                 # Virtual environment
-├── requirements.txt      # Python dependencies
-├── README.md            # This file
-└── main.py              # Main application file
-```
+1. **📁 Dosya Seçimi**: Target .exe ve output klasörü
+2. **🚀 Exe Başlatma**: "Launch Target Executable" 
+3. **🔑 Key Girişi**: Auth key'ini hem GUI'de hem exe'de girin
+4. **🔓 Dumping**: "Key Unlocked - Start Dumping" butonu
+5. **📊 Sonuç**: Otomatik çıkarma ve rapor oluşturma
 
-## Dependencies
-
-- `requests` - HTTP library for making requests
-- `beautifulsoup4` - HTML/XML parsing
-- `lxml` - XML and HTML parser
-- `colorama` - Cross-platform colored terminal text
-- `pefile` - PE file analysis library
-- `cryptography` - Cryptographic operations
-- `py7zr` - 7z archive handling
-- `python-magic` - File type detection
-
-## Features
-
-- **PE File Analysis**: Analyzes Windows PE executable files
-- **Authentication Detection**: Automatically detects authentication mechanisms
-- **Resource Extraction**: Extracts embedded resources, sections, and imports
-- **Certificate Extraction**: Extracts digital certificates if present
-- **Organized Output**: Creates timestamped folders with categorized extracted data
-- **Verbose Logging**: Optional detailed output for debugging
-
-## Output Structure
-
-When extraction is complete, files are organized in `extracted_YYYYMMDD_HHMMSS/`:
+## 📁 Proje Yapısı
 
 ```
-extracted_20231201_143022/
-├── source_code/          # Extracted resources and imports
-├── drivers/              # Driver files (if found)
-├── certificates/         # Digital certificates
-├── dumps/               # Raw section dumps and original file
-└── extraction_info.txt  # Extraction metadata
+PE-Dumper/
+├── 🚀 run.sh / run.bat           # Tek tıkla çalıştırma
+├── 🚀 launcher.sh / launcher.bat # Hızlı başlatma  
+├── ⚙️  install.sh / install.bat   # Otomatik kurulum
+├── 📋 requirements.txt           # Bağımlılıklar
+├── 📖 README.md                 # Ana döküman
+├── core/                        # 🧠 Ana kod dosyaları
+│   ├── main.py                  # PE dumper motoru
+│   └── interactive_dumper.py    # GUI uygulaması
+├── scripts/                     # 📜 Başlatma scriptleri
+│   ├── start_dumper.sh          # Linux detaylı başlatıcı
+│   └── start_dumper.bat         # Windows detaylı başlatıcı
+└── docs/                        # 📚 Dokümantasyon
+    └── INTERACTIVE_GUIDE.md     # Detaylı kullanım kılavuzu
 ```
+
+## 🔧 Gereksinimler
+
+- **Python**: 3.7+
+- **Platform**: Linux, Windows, macOS
+- **Bağımlılıklar**: Otomatik kurulur
+
+## ⚠️ Güvenlik Uyarıları
+
+- ✅ **Sadece kendi ürünlerinizi** test edin
+- ✅ **Authentication key'lerinizi** güvende tutun  
+- ✅ **Çıktı dosyalarını** güvenli yerlerde saklayın
+
+## 📞 Destek
+
+Sorun yaşarsanız:
+1. Log alanından hata mesajlarını kontrol edin
+2. Platform özel kılavuzları inceleyin:
+   - **Linux/macOS**: `docs/INTERACTIVE_GUIDE.md`
+   - **Windows**: `docs/WINDOWS_GUIDE.md`
+3. Kullandığınız dosya türü ve boyutunu belirtin
+
+---
+
+**🎉 Başarılı güvenlik testleri dileriz!**
+
+> PE Dumper Interactive ile kendi yazılımlarınızın güvenlik seviyesini test edin ve daha güvenli ürünler geliştirin.
